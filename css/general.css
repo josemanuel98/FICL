@@ -1,0 +1,121 @@
+body{
+    background-image: url("/img/fondo.jpg");
+    background-size: contain;
+    background-repeat:round;
+    font-family: 'Boogaloo', cursive;
+}
+
+#content{
+    padding-top: 40px;
+}
+
+#l img, #r img{
+    width: 50px;
+    height: 45%;
+}
+
+#l, #r{
+    position: fixed;
+}
+
+#l{
+    right: 4%;
+}
+
+#r{
+    left: 4%;
+}
+
+header, footer{
+    background: #1B1464;
+    padding: 2px;
+}
+
+#logo{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+}
+
+#logo img{
+    width: 500px;
+    height: 200px;
+}
+
+#video-wrapper, #comite{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content:center;
+    
+}
+
+#video-wrapper video{
+    width: 60%;
+}
+
+header{
+    position: fixed;
+    padding: 0 8%;
+}
+
+nav ul li{
+    display: inline;
+    margin: 0 4%;
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-size: 1.5em;
+    padding: 10px;
+}
+
+p, nav ul li a{
+    color: white;
+}
+
+nav ul li a:hover{
+    -webkit-animation-name:menu;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:1;
+    -webkit-animation-fill-mode:forwards;
+    animation-name:menu;
+    animation-duration:2s;
+    animation-iteration-count:1;
+    animation-fill-mode:forwards;
+}
+
+footer{
+    padding-bottom: 40px;
+}
+
+footer p{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+}
+
+footer div img{
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+
+@-webkit-keyframes menu{
+    0%{color:white;}
+    100%
+    {
+        background: #CD5626;
+        color: #1B1464;
+    }
+    
+@keyframes menu{
+    0%{color:white;}
+    100%
+    {
+        background: #CD5626;
+        color: #1B1464;
+    }
+}
