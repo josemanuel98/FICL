@@ -2,27 +2,27 @@
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 
-$name=trim($_POST["nombre"]);
-$email=trim($_POST["email"]);
-$message=trim($_POST["mensaje"]);
+$name=trim($_POST["Nombre"]);
+$email=trim($_POST["Email"]);
+$message=trim($_POST["Mensaje"]);
 
 
 	if($name == "" OR $email == "" OR $message == ""){
 
-		echo "You must specify a value for name, email and message.";
+		echo "Debe llenar todos los campos";
 		exit;
 
 	}
 
 	foreach ($_POST as $value) {
 			if (stripos($value, 'Content-Type:') !== FALSE) {
-					echo "There was a problem with the information you entered.";
+					echo "Hubo un problema con la informacion ingresada";
 					exit;
 			}
 	}
 
 	if ($_POST["direccion"] != "") {
-			echo "Your form submission has an errror.";
+			echo "Los robots no se comunican con humanos";
 			exit;
 	}
 	
@@ -32,7 +32,7 @@ $message=trim($_POST["mensaje"]);
 
 		if(!$mail->ValidateAddress($email)){
 
-				echo "You must specify a valid email address.";
+				echo "Debe especificar una direccion de correo valida";
 		}
 
 
@@ -75,24 +75,25 @@ $description = "Sitio web del Festival Internacional de Cine de León";
 		}
 
 		else{ ?>
-	<form action="contacto.php" method="post">
-
-		<label for="nombre">Nombre:</label>
-		<input type="text" name="nombre" id="nombre">
-
-		<label for="email">e-mail:</label>
-		<input type="text" name="email" id="email">
-
-		<label for="mensaje">Mensaje:</label>
-		<textarea name="mensaje" id="mensaje"></textarea> 
-
-		<div id="secret">
-		<input type="text" name="direccion" id="direccion">
-		</div>
-
-		<input type="submit" value="Enviar">
-
-	</form>
+	<div id="content">
+            <!--<?php include("inc/cintas.php"); ?>-->
+            <form action="contacto.php" method="post">
+                <fieldset>
+                    <label for="Nombre">Nombre: </label>
+                    <input type="text" name="Nombre" id="Nombre">
+                    <label for="email">Email: </label>
+                    <input type="email" name="Email" id="Email">
+                    <label for="Asunto">Asunto: </label>
+                    <input type="text" name="Asunto" id="Asunto">
+                    <label for="Mensaje">¿Qué nos quieres contar?</label>
+                    <textarea name="Mensaje" rows="10" cols="100" id="Mensaje"></textarea>
+                    <div id="secret">
+		              <input type="text" name="direccion" id="direccion">
+		            </div>
+                    <input type="submit" value="Enviar" value="send">
+                </fieldset>
+            </form>
+        </div>
 
  <?php } ?>
 <?php include("inc/footer.php"); ?>
