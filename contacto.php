@@ -1,5 +1,7 @@
 <?php
 
+$message = "LLene todos los campos";
+
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 $name=trim($_POST["Nombre"]);
@@ -8,15 +10,13 @@ $message=trim($_POST["Mensaje"]);
 
 
 	if($name == "" OR $email == "" OR $message == ""){
-
-		echo "Debe llenar todos los campos";
+        header("Location: contacto.php?status=noInf");
 		exit;
-
 	}
 
 	foreach ($_POST as $value) {
 			if (stripos($value, 'Content-Type:') !== FALSE) {
-					echo "Hubo un problema con la informacion ingresada";
+                    header("Location: contacto.php?status=badInf");
 					exit;
 			}
 	}
@@ -31,8 +31,8 @@ $message=trim($_POST["Mensaje"]);
 	$mail = new PHPMailer();
 
 		if(!$mail->ValidateAddress($email)){
-
-				echo "Debe especificar una direccion de correo valida";
+                header("Location: contacto.php?status=badMail");
+                exit;
 		}
 
 
@@ -49,8 +49,7 @@ $message=trim($_POST["Mensaje"]);
 	$mail->MSgHTML($email_body);
 
 	if(!$mail->Send()){
-
-		echo "There was a problem sending the email: " . $mail->ErrorInfo;
+        header("Location: contacto.php?status=error");
 		exit;
 	}
 
@@ -74,26 +73,29 @@ $description = "Sitio web del Festival Internacional de Cine de León";
 			echo "<p>Gracias por tener interés en nosotros, estaremos en contacto.</p>";
 		}
 
-		else{ ?>
-	<div id="content">
-            <!--<?php include("inc/cintas.php"); ?>-->
-            <form action="contacto.php" method="post">
-                <fieldset>
-                    <label for="Nombre">Nombre: </label>
-                    <input type="text" name="Nombre" id="Nombre">
-                    <label for="email">Email: </label>
-                    <input type="email" name="Email" id="Email">
-                    <label for="Asunto">Asunto: </label>
-                    <input type="text" name="Asunto" id="Asunto">
-                    <label for="Mensaje">¿Qué nos quieres contar?</label>
-                    <textarea name="Mensaje" rows="10" cols="100" id="Mensaje"></textarea>
-                    <div id="secret">
-		              <input type="text" name="direccion" id="direccion">
-		            </div>
-                    <input type="submit" value="Enviar" value="send">
-                </fieldset>
-            </form>
-        </div>
+        else if(isset($_GET["status"]) && $_GET["status"] == "noInf"){
+            $message = "Debe llenar todos los campos";
+            include("inc/contactoForm.php");
+        }
 
- <?php } ?>
+        else if(isset($_GET["status"]) && $_GET["status"] == "badInf"){
+            $message = "Hubo un problema con la informacion ingresada";
+            include("inc/contactoForm.php");
+        }
+
+        else if(isset($_GET["status"]) && $_GET["status"] == "badMail"){
+            $message = "Debe especificar una direccion de correo valida";
+            include("inc/contactoForm.php");
+        }
+
+        else if(isset($_GET["status"]) && $_GET["status"] == "error"){
+            echo '<div id="content">';
+            echo "<h1>Lo sentimos, algo salió mal, ¿lo intentamos más tarde?</h1>";
+            echo '</div>';
+            echo '<br><br><br><br><br><br><br>';
+        }
+
+		else{
+            include("inc/contactoForm.php");
+  } ?>
 <?php include("inc/footer.php"); ?>

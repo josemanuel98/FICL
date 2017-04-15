@@ -26,16 +26,42 @@ body{
     left: 4%;
 }
 
+#members .photo img{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
+
+.photo{
+    padding: 20px;
+}
+
+.photo img:hover{
+    -webkit-animation-name:member;
+    -webkit-animation-duration:1s;
+    -webkit-animation-iteration-count:1;
+    -webkit-animation-fill-mode:forwards;
+    animation-name:member;
+    animation-duration:1s;
+    animation-iteration-count:1;
+    animation-fill-mode:forwards;
+}
+
+p, h1, label, legend{
+    color: #60646D;
+}
+
 header, footer{
     background: #1B1464;
     padding: 2px;
 }
 
-#logo{
-    display: flex;
-    display: -webkit-flex;
-    justify-content: center;
-    -webkit-justify-content: center;
+.photo p{
+    position: relative;
+    bottom: 80px;
+    visibility: hidden;
+    color: #CD5626;
+    background: #FFCD24;
 }
 
 #logo img{
@@ -43,7 +69,7 @@ header, footer{
     height: 200px;
 }
 
-#video-wrapper, #comite{
+#video-wrapper, #comite, .photo p, footer p, form, header, #logo, #content, #members, h1{
     display: flex;
     display: -webkit-flex;
     justify-content: center;
@@ -53,13 +79,6 @@ header, footer{
 
 #video-wrapper video{
     width: 60%;
-}
-
-header{
-    /*position: fixed;
-    padding: 0 8%;*/
-    display: flex;
-    justify-content: center;
 }
 
 nav ul li{
@@ -73,7 +92,7 @@ nav ul li a{
     padding: 10px;
 }
 
-p, nav ul li a{
+nav ul li a{
     color: white;
 }
 
@@ -92,13 +111,6 @@ footer{
     padding-bottom: 40px;
 }
 
-footer p{
-    display: flex;
-    display: -webkit-flex;
-    justify-content: center;
-    -webkit-justify-content: center;
-}
-
 footer div img{
     width: 50px;
     height: 50px;
@@ -107,10 +119,6 @@ footer div img{
 
 form{
     padding: 10px;
-    display: flex;
-    display: -webkit-flex;
-    justify-content: center;
-    -webkit-justify-content: center;
 }
 
 #secret{
@@ -121,8 +129,23 @@ textarea{
     resize: none;
 }
 
+legend{
+    text-align: center;
+    font-size: 1.35em;
+}
+
 input, textarea{
     display: block;
+}
+
+@-webkit-keyframes member{
+    0%{filter: grayscale(0%);}
+    100%{filter: grayscale(100%);}
+}
+
+@keyframes member{
+    0%{filter: grayscale(0%);}
+    100%{filter: grayscale(100%);}
 }
 
 @-webkit-keyframes menu{
