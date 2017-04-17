@@ -85,63 +85,27 @@ $description = "Sitio web del Festival Internacional de Cine de León";
     </script>
 <?php include("inc/header.php") ?>
         <div id="content">
-            <!--<?php include("inc/cintas.php"); ?>-->
             <section id="content-main">
                 <div id="video-wrapper">
                     <video onmouseover="trigger()" onmouseout="triggerF()" id="video" src="video/intro.mp4" loop autoplay muted></video>
                 </div>
                     <h1>Comite Organizador</h1>
                     <div id="members">
-                        <section>
-                            <div class="photo">
-                                <a href="#"><img onmouseover="visible1()" onmouseout="visibleF1()" src="img/comite/AlejandraVidales.jpg" alt="Alejandra Vidales"></a>
-                                <p id="p1">Alejandra Vidales</p>
-                            </div>
-                            <div class="photo">
-                                <a href="#"><img onmouseover="visible2()" onmouseout="visibleF2()" src="img/comite/DavidBravo.jpg" alt="David Bravo"></a>
-                                <p id="p2">David Bravo</p>
-                            </div>
-                        </section>
-                        <section>
-                            <div class="photo">
-                                <a href="#"><img onmouseover="visible3()" onmouseout="visibleF3()" src="img/comite/FannyVillegas.jpg" alt="Fanny Villegas"></a>
-                                <p id="p3">Fanny Villegas</p>
-                            </div>
-                            <div class="photo">
-                                <a href="#"><img onmouseover="visible4()" onmouseout="visibleF4()" src="img/comite/IsaacSan.jpg" alt="Isaac San"></a>
-                                <p id="p4">Isaac San</p>
-                            </div>
-                        </section>
-                        <section>
-                            <div class="photo">
-                                <a href="#"><img onmouseover="visible5()" onmouseout="visibleF5()" src="img/comite/JorgeTrujillo.jpg" alt="Jorge Trujillo"></a>
-                                <p id="p5">Jorge Trujillo</p>
-                            </div>
-                            <div class="photo">
-                                <a href="#"><img onmouseover="visible6()" onmouseout="visibleF6()" src="img/comite/MargotOzuna.jpg" alt="Margot Ozuna"></a>
-                                <p id="p6">Margot Ozuna</p>
-                            </div>
-                        </section>
-                        <section>
-                            <div class="photo">
-                                <a href="#"><img onmouseover="visible7()" onmouseout="visibleF7()" src="img/comite/MiltonPonce.jpg" alt="Milton Ponce"></a>
-                                <p id="p7">Milton Ponce</p>
-                            </div>
-                            <div class="photo">
-                                <a href="#"><img onmouseover="visible8()" onmouseout="visibleF8()" src="img/comite/NancySalazar.jpg" alt="Nancy Salazar"></a>
-                                <p id="p8">Nancy Salazar</p>
-                            </div>
-                        </section>
-                        <section>
-                            <div class="photo">
-                                <a href="#"><img onmouseover="visible9()" onmouseout="visibleF9()" src="img/comite/OsmaryGarnica.jpg" alt="Osmary Garnica"></a>
-                                <p id="p9">Osmary Garnica</p>
-                            </div>
-                            <div class="photo">
-                                <a href="#"><img onmouseover="visible10()" onmouseout="visibleF10()" src="img/comite/WendyAranda.jpg" alt="Wendy Aranda"></a>
-                                <p id="p10">Wendy Aranda</p>
-                            </div>
-                        </section>
+                        <?php include("inc/miembros.php"); ?>
+                        <?php
+                            foreach($miembros as $i => $values){
+                                echo $values["sectionI"];
+                                echo $values["divI"];
+                                echo "<a href=" . $values["link1"] . "><img onmouseover=" . $values["visible1"] . " onmouseout=" . $values["visibleF1"] . " src=" . $values["img1"] . " alt=" . $values["nombre1"] . "></a>";
+                                echo "<p id=" . $values["pId1"] . ">" . $values["nombre1"] . "</p>";
+                                echo $values["divF"];
+                                echo $values["divI"];
+                                echo "<a href=" . $values["link2"] . "><img onmouseover=" . $values["visible2"] . " onmouseout=" . $values["visibleF2"] . " src=" . $values["img2"] . " alt=" . $values["nombre2"] . "></a>";
+                                echo "<p id=" . $values["pId2"] . ">" . $values["nombre2"] . "</p>";
+                                echo $values["divF"];
+                                echo $values["sectionF"];
+                            }
+                        ?>
                     </div>
             </section>
         </div>
