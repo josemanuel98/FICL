@@ -44,8 +44,8 @@ $message=trim($_POST["Mensaje"]);
 
 	$mail->SetFrom($email, $name);
 	$myMail="josemanuelmartinezlopez@live.com.mx";
-	$mail->AddAddress($myMail, "Hello_World");
-	$mail->Subject="Hello World Form Submission | " . $name;
+	$mail->AddAddress($myMail, "FICL");
+	$mail->Subject="Contacto | " . $name;
 	$mail->MSgHTML($email_body);
 
 	if(!$mail->Send()){
@@ -57,8 +57,6 @@ $message=trim($_POST["Mensaje"]);
 	exit;
 }
 ?>
-
-
 
 <?php 
 $title = "contacto";

@@ -1,3 +1,7 @@
+/*****************************
+Estilos generales
+**************************/
+
 body{
     background-image: url("/img/fondo.jpg");
     background-size: contain;
@@ -8,6 +12,62 @@ body{
 #content{
     padding-top: 40px;
 }
+
+header, footer{
+    background: #1B1464;
+    padding: 2px;
+}
+
+p, h1, label, legend{
+    color: #60646D;
+}
+
+#video-wrapper, #comite, .photo p, footer p, form, header, #logo, #members, h1, #categorias, h2, h3, #funcionEspecial p, #funcionEspecial ul li, #funcionEspecial div, #categoria ul, #lugar div, #lugar p, #prensa p{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content:center;
+    
+}
+
+footer{
+    padding-bottom: 40px;
+}
+
+footer div img{
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+
+form{
+    padding: 10px;
+}
+
+a{
+    text-decoration: none;
+}
+
+#secret{
+    visibility: hidden;
+}
+
+textarea{
+    resize: none;
+}
+
+legend{
+    text-align: center;
+    font-size: 1.35em;
+}
+
+input, textarea{
+    display: block;
+}
+
+/*************************************
+Estos son los estilos de las cintas, esas que no utilizamos
+**************************************/
 
 #l img, #r img{
     width: 50px;
@@ -26,10 +86,32 @@ body{
     left: 4%;
 }
 
+/*******************************
+Especificos
+*******************************/
+
 #members .photo img{
     height: 120px;
     width: 120px;
     border-radius: 50%;
+}
+
+#lugar div img{
+    border-radius: 20%;
+    height: 300px;
+    width: 350px;
+}
+
+#categorias{
+    display: flex;
+    display: -webkit-flex;
+    column-count: 2;
+    -webkit-column-count: 2;
+}
+
+#categorias .categoria img{
+    height: 150px;
+    width: 150px;
 }
 
 .photo{
@@ -47,15 +129,6 @@ body{
     animation-fill-mode:forwards;
 }
 
-p, h1, label, legend{
-    color: #60646D;
-}
-
-header, footer{
-    background: #1B1464;
-    padding: 2px;
-}
-
 .photo p{
     position: relative;
     bottom: 80px;
@@ -69,25 +142,24 @@ header, footer{
     height: 200px;
 }
 
-#video-wrapper, #comite, .photo p, footer p, form, header, #logo, #content, #members, h1{
-    display: flex;
-    display: -webkit-flex;
-    justify-content: center;
-    -webkit-justify-content:center;
-    
-}
-
 #video-wrapper video{
     width: 60%;
 }
+
+/***********************************
+Navegación
+***********************************/
 
 nav ul li{
     display: inline;
     margin: 0 4%;
 }
 
+h2 a{
+    color: #1B1464;
+}
+
 nav ul li a{
-    text-decoration: none;
     font-size: 1.5em;
     padding: 10px;
 }
@@ -107,36 +179,9 @@ nav ul li a:hover{
     animation-fill-mode:forwards;
 }
 
-footer{
-    padding-bottom: 40px;
-}
-
-footer div img{
-    width: 50px;
-    height: 50px;
-    margin: 0 10px;
-}
-
-form{
-    padding: 10px;
-}
-
-#secret{
-    visibility: hidden;
-}
-
-textarea{
-    resize: none;
-}
-
-legend{
-    text-align: center;
-    font-size: 1.35em;
-}
-
-input, textarea{
-    display: block;
-}
+/*******************************
+Animaciones
+*******************************/
 
 @-webkit-keyframes member{
     0%{filter: grayscale(0%);}
