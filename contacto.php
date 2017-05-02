@@ -43,7 +43,7 @@ $message=trim($_POST["Mensaje"]);
 
 
 	$mail->SetFrom($email, $name);
-	$myMail="josemanuelmartinezlopez@live.com.mx";
+	$myMail="contacto@ficleon.mx";
 	$mail->AddAddress($myMail, "FICL");
 	$mail->Subject="Contacto | " . $name;
 	$mail->MSgHTML($email_body);
@@ -96,4 +96,5 @@ $description = "Sitio web del Festival Internacional de Cine de León";
 		else{
             include("inc/contactoForm.php");
   } ?>
+<?php include('inc/patrocinadores.php'); ?>
 <?php include("inc/footer.php"); ?>

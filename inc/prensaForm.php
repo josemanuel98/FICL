@@ -1,5 +1,5 @@
 <div id="content">
-            <form action="prensa.php" method="post">
+            <form id="prensaForm" action="prensa.php" method="post">
                 <fieldset>
                     <legend><?php echo $message;?></legend>
                     

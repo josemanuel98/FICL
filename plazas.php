@@ -16,4 +16,5 @@ $description = "Sitio web del Festival Internacional de Cine de León";
                 <p>Es un centro comercial amigable con el medio ambiente, pues además de contar con procesos sustentables,</p> <p>nuestros espacios verdes permiten la generación de ecosistemas, facilitando la pre producción de diversas especies, entre ellos peces y colibríes.</p>
             </div>
         </div>
+<?php include('inc/patrocinadores.php'); ?>
 <?php include("inc/footer.php"); ?>

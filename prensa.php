@@ -49,7 +49,7 @@ $email=trim($_POST["Email"]);
 
 
 	$mail->SetFrom($email, $name);
-	$myMail="josemanuelmartinezlopez@live.com.mx";
+	$myMail="ficl.medios@gmail.com";
 	$mail->AddAddress($myMail, "FICL");
 	$mail->Subject="Acreditación de Prensa | " . $name . " " . $apellido;
 	$mail->MSgHTML($email_body);
@@ -106,4 +106,5 @@ $description = "Sitio web del Festival Internacional de Cine de León";
   } ?>
             </div>
         </div>
+<?php include('inc/patrocinadores.php'); ?>
 <?php include("inc/footer.php"); ?>
